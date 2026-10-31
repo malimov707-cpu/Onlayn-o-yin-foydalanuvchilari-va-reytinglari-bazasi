@@ -1,0 +1,15 @@
+CREATE TABLE countries(country_id INTEGER PRIMARY KEY, name TEXT NOT NULL, code TEXT);
+CREATE TABLE users(user_id INTEGER PRIMARY KEY, username TEXT, email TEXT, country_raw TEXT, country_id INTEGER, birth_year INTEGER, registered_at TEXT, is_active INTEGER);
+CREATE TABLE user_profiles(user_id INTEGER PRIMARY KEY, display_name TEXT, level INTEGER, xp INTEGER, bio TEXT);
+CREATE TABLE platforms(platform_id INTEGER PRIMARY KEY, name TEXT);
+CREATE TABLE genres(genre_id INTEGER PRIMARY KEY, name TEXT);
+CREATE TABLE games(game_id INTEGER PRIMARY KEY, title TEXT, platform_id INTEGER, release_year INTEGER);
+CREATE TABLE game_genres(game_id INTEGER, genre_id INTEGER, PRIMARY KEY(game_id, genre_id));
+CREATE TABLE matches(match_id INTEGER PRIMARY KEY, game_id INTEGER, started_at TEXT, duration_min REAL);
+CREATE TABLE match_players(match_id INTEGER, user_id INTEGER, score INTEGER, is_winner INTEGER, PRIMARY KEY(match_id, user_id));
+CREATE TABLE ratings(rating_id INTEGER PRIMARY KEY, user_id INTEGER, game_id INTEGER, elo INTEGER, updated_at TEXT);
+CREATE TABLE leaderboards(leaderboard_id INTEGER PRIMARY KEY, game_id INTEGER, user_id INTEGER, season TEXT, rank_position INTEGER);
+CREATE TABLE achievements(achievement_id INTEGER PRIMARY KEY, title TEXT, points INTEGER);
+CREATE TABLE user_achievements(user_id INTEGER, achievement_id INTEGER, earned_at TEXT);
+CREATE TABLE friends(user_id INTEGER, friend_id INTEGER, since TEXT);
+CREATE TABLE game_reviews(review_id INTEGER PRIMARY KEY, user_id INTEGER, game_id INTEGER, stars INTEGER, comment TEXT);
