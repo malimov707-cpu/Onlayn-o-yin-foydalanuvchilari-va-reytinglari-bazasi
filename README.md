@@ -38,3 +38,19 @@ ratings, leaderboards, achievements, user_achievements, friends, game_reviews
 | 3 | Data Analyst | SQL so'rovlar, grafiklar, xulosa |
 | 4 | Tester (QA) | `tests/`, test hisoboti |
 | 5 | DevOps / CI-CD | `.github/workflows/ci.yml`, GitHub Pages, branch qoidalari |
+
+**Guruh a'zolari:** 1) Mashhurbek — Data Engineer / DB, 2) Lochinbek — DataOps, 3) Og'abek — Data Analyst, 4) Akrom — Tester (QA) + DevOps / CI-CD |
+
+## ER-diagramma (matnli)
+
+```
+countries 1---* users 1---1 user_profiles
+users 1---* match_players *---1 matches *---1 games
+games *---* genres (game_genres)
+users 1---* ratings *---1 games
+games 1---* leaderboards
+users *---* achievements (user_achievements)
+users *---* friends (users)
+users 1---* game_reviews *---1 games
+games *---1 platforms
+```
