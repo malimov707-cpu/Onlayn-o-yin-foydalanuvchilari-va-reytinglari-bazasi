@@ -112,7 +112,7 @@ def build_site(rep, a):
     }
     canv = "".join(f'<div class="card"><canvas id="{k}"></canvas></div>' for k in charts)
     js = "".join(f"new Chart(document.getElementById('{k}'),{{type:'{v[0]}',data:{{labels:{json.dumps(v[1])},"
-                 f"datasets:[{{label:'{v[3]}',data:{json.dumps(v[2])},backgroundColor:'#4f46e5',borderColor:'#4f46e5'}}]}}}});"
+                 f"datasets:[{{label:{json.dumps(v[3])},data:{json.dumps(v[2])},backgroundColor:'#4f46e5',borderColor:'#4f46e5'}}]}}}});"
                  for k, v in charts.items())
     qual = "".join(f"<tr><td>{k}</td><td>{v}</td></tr>" for k, v in rep.items())
     html = f"""<!doctype html><html lang="uz"><head><meta charset="utf-8"><title>Onlayn o'yin reytinglari</title>
