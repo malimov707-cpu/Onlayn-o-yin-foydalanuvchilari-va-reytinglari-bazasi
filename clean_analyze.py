@@ -93,6 +93,8 @@ def analytics():
       "avg_stars": q("""SELECT g.title, ROUND(AVG(stars),2) stars FROM game_reviews JOIN games g USING(game_id)
                         GROUP BY g.title ORDER BY stars DESC"""),
       "matches_monthly": q("SELECT substr(started_at,1,7) month, COUNT(*) matches FROM matches GROUP BY month ORDER BY month"),
+      "games_by_platform": q("""SELECT p.name platform, COUNT(*) games FROM games g
+                                 JOIN platforms p USING(platform_id) GROUP BY p.name ORDER BY games DESC"""),
       "win_rate": q("""SELECT u.username, COUNT(*) played, ROUND(100.0*SUM(is_winner)/COUNT(*),1) win_pct
                        FROM match_players JOIN users u USING(user_id) GROUP BY user_id HAVING played>=15
                        ORDER BY win_pct DESC LIMIT 10"""),
@@ -106,6 +108,7 @@ def build_site(rep, a):
       "c2": ("bar", a["matches_per_game"]["title"].tolist(), a["matches_per_game"]["matches"].tolist(), "O'yinlar soni (match)"),
       "c3": ("line", a["matches_monthly"]["month"].tolist(), a["matches_monthly"]["matches"].tolist(), "Oylik matchlar"),
       "c4": ("bar", a["avg_stars"]["title"].tolist(), a["avg_stars"]["stars"].tolist(), "O'rtacha baho (1-5)"),
+      "c5": ("bar", a["games_by_platform"]["platform"].tolist(), a["games_by_platform"]["games"].tolist(), "Platformalar boyicha o'yinlar"),
     }
     canv = "".join(f'<div class="card"><canvas id="{k}"></canvas></div>' for k in charts)
     js = "".join(f"new Chart(document.getElementById('{k}'),{{type:'{v[0]}',data:{{labels:{json.dumps(v[1])},"
