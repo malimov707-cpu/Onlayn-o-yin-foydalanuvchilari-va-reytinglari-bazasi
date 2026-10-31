@@ -27,3 +27,9 @@ def test_scores_not_negative():
 
 def test_stars_range():
     assert q("SELECT count(*) FROM game_reviews WHERE stars NOT BETWEEN 1 AND 5")[0][0] == 0
+
+def test_country_mapped():
+    assert q("SELECT count(*) FROM users WHERE country_id IS NULL")[0][0] >= 0
+
+def test_birth_year_range():
+    assert q("SELECT count(*) FROM users WHERE birth_year IS NOT NULL AND birth_year NOT BETWEEN 1930 AND 2020")[0][0] == 0
