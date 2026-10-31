@@ -15,7 +15,16 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - run: pytest -v
+      - run: pytest -v --junitxml=reports/tests.xml
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-report
+          path: reports/tests.xml
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node --check web/app.js
       - run: python generate_data.py && python clean_analyze.py
       - uses: actions/upload-pages-artifact@v3
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'

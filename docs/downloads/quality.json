@@ -1,0 +1,93 @@
+{
+  "users_raw": 525,
+  "invalid_email_removed": 29,
+  "duplicate_users_removed": 24,
+  "country_unknown": 72,
+  "birth_year_invalid_nulled": 19,
+  "bad_level_fixed": 8,
+  "match_duration_bad": 167,
+  "score_bad_removed": 352,
+  "elo_bad_removed": 40,
+  "friends_bad_removed": 152,
+  "reviews_bad_removed": 18,
+  "level_over_100_capped": 0,
+  "tables": {
+    "countries": {
+      "before": 10,
+      "after": 10,
+      "removed": 0
+    },
+    "users": {
+      "before": 525,
+      "after": 472,
+      "removed": 53
+    },
+    "user_profiles": {
+      "before": 500,
+      "after": 472,
+      "removed": 28
+    },
+    "platforms": {
+      "before": 4,
+      "after": 4,
+      "removed": 0
+    },
+    "genres": {
+      "before": 6,
+      "after": 6,
+      "removed": 0
+    },
+    "games": {
+      "before": 12,
+      "after": 12,
+      "removed": 0
+    },
+    "game_genres": {
+      "before": 24,
+      "after": 24,
+      "removed": 0
+    },
+    "matches": {
+      "before": 3000,
+      "after": 3000,
+      "removed": 0
+    },
+    "match_players": {
+      "before": 9131,
+      "after": 8278,
+      "removed": 853
+    },
+    "ratings": {
+      "before": 1027,
+      "after": 933,
+      "removed": 94
+    },
+    "leaderboards": {
+      "before": 240,
+      "after": 227,
+      "removed": 13
+    },
+    "achievements": {
+      "before": 8,
+      "after": 8,
+      "removed": 0
+    },
+    "user_achievements": {
+      "before": 1500,
+      "after": 1177,
+      "removed": 323
+    },
+    "friends": {
+      "before": 1230,
+      "after": 1078,
+      "removed": 152
+    },
+    "game_reviews": {
+      "before": 800,
+      "after": 743,
+      "removed": 57
+    }
+  },
+  "users_clean": 472,
+  "achievement_duplicates_removed": 239
+}

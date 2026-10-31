@@ -1,122 +1,13 @@
-<!doctype html><html lang="uz"><head><meta charset="utf-8"><title>Onlayn o'yin reytinglari</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1"></script>
-<style>body{font-family:system-ui,sans-serif;max-width:1000px;margin:auto;padding:16px;color:#222}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:16px}
-.card{border:1px solid #ddd;border-radius:10px;padding:12px}table{border-collapse:collapse;width:100%}
-td,th{padding:4px 8px;border-bottom:1px solid #eee;text-align:left}</style></head><body>
-<h1>Onlayn o'yin foydalanuvchilari va reytinglari</h1>
-<h2>Ma'lumot sifati hisoboti (tozalash)</h2><div class="card"><table><tr><td>users_raw</td><td>525</td></tr><tr><td>invalid_email_removed</td><td>29</td></tr><tr><td>duplicate_users_removed</td><td>24</td></tr><tr><td>country_unknown</td><td>72</td></tr><tr><td>birth_year_invalid_nulled</td><td>19</td></tr><tr><td>bad_level_fixed</td><td>8</td></tr><tr><td>match_duration_bad</td><td>167</td></tr><tr><td>score_bad_removed</td><td>352</td></tr><tr><td>elo_bad_removed</td><td>40</td></tr><tr><td>friends_bad_removed</td><td>152</td></tr><tr><td>reviews_bad_removed</td><td>18</td></tr><tr><td>level_over_100_capped</td><td>0</td></tr></table></div>
-<h2>Grafiklar</h2><div class="grid"><div class="card"><canvas id="c1"></canvas></div><div class="card"><canvas id="c2"></canvas></div><div class="card"><canvas id="c3"></canvas></div><div class="card"><canvas id="c4"></canvas></div><div class="card"><canvas id="c5"></canvas></div></div>
-<h2>Top 10 o'yinchi (ELO)</h2><div class="card"><table class="dataframe t">
-  <thead>
-    <tr style="text-align: right;">
-      <th>username</th>
-      <th>avg_elo</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>player4</td>
-      <td>1997.0</td>
-    </tr>
-    <tr>
-      <td>player91</td>
-      <td>1993.0</td>
-    </tr>
-    <tr>
-      <td>player410</td>
-      <td>1969.0</td>
-    </tr>
-    <tr>
-      <td>player59</td>
-      <td>1929.0</td>
-    </tr>
-    <tr>
-      <td>player176</td>
-      <td>1895.0</td>
-    </tr>
-    <tr>
-      <td>player360</td>
-      <td>1869.0</td>
-    </tr>
-    <tr>
-      <td>player250</td>
-      <td>1819.0</td>
-    </tr>
-    <tr>
-      <td>player151</td>
-      <td>1812.0</td>
-    </tr>
-    <tr>
-      <td>player402</td>
-      <td>1801.0</td>
-    </tr>
-    <tr>
-      <td>player108</td>
-      <td>1801.0</td>
-    </tr>
-  </tbody>
-</table></div>
-<h2>Eng yuqori g'alaba foizi</h2><div class="card"><table class="dataframe t">
-  <thead>
-    <tr style="text-align: right;">
-      <th>username</th>
-      <th>played</th>
-      <th>win_pct</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>player406</td>
-      <td>20</td>
-      <td>65.0</td>
-    </tr>
-    <tr>
-      <td>player322</td>
-      <td>22</td>
-      <td>59.1</td>
-    </tr>
-    <tr>
-      <td>player366</td>
-      <td>16</td>
-      <td>56.3</td>
-    </tr>
-    <tr>
-      <td>player167</td>
-      <td>18</td>
-      <td>55.6</td>
-    </tr>
-    <tr>
-      <td>player263</td>
-      <td>20</td>
-      <td>55.0</td>
-    </tr>
-    <tr>
-      <td>player392</td>
-      <td>22</td>
-      <td>54.5</td>
-    </tr>
-    <tr>
-      <td>player479</td>
-      <td>15</td>
-      <td>53.3</td>
-    </tr>
-    <tr>
-      <td>player377</td>
-      <td>15</td>
-      <td>53.3</td>
-    </tr>
-    <tr>
-      <td>player359</td>
-      <td>15</td>
-      <td>53.3</td>
-    </tr>
-    <tr>
-      <td>player269</td>
-      <td>15</td>
-      <td>53.3</td>
-    </tr>
-  </tbody>
-</table></div>
-<script>new Chart(document.getElementById('c1'),{type:'bar',data:{labels:["Uzbekistan", "Germany", "Turkey", "Brazil", "Japan", "USA", "Russia", "Kazakhstan", "India", "Korea"],datasets:[{label:"O'rtacha ELO (davlat)",data:[1549.0, 1522.0, 1517.0, 1517.0, 1502.0, 1486.0, 1474.0, 1454.0, 1449.0, 1447.0],backgroundColor:'#4f46e5',borderColor:'#4f46e5'}]}});new Chart(document.getElementById('c2'),{type:'bar',data:{labels:["Dragon Quest X", "Alpha Strike", "Empire Wars", "Sky Arena", "Speed Rush", "Zombie Siege", "Chess Master", "Goal Hero", "Night Racer", "Puzzle Land", "Mystic Realm", "Tank Legends"],datasets:[{label:"O'yinlar soni (match)",data:[273, 268, 266, 258, 250, 248, 248, 247, 239, 236, 235, 232],backgroundColor:'#4f46e5',borderColor:'#4f46e5'}]}});new Chart(document.getElementById('c3'),{type:'line',data:{labels:["2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01"],datasets:[{label:"Oylik matchlar",data:[276, 213, 255, 251, 248, 242, 266, 263, 218, 249, 258, 256, 5],backgroundColor:'#4f46e5',borderColor:'#4f46e5'}]}});new Chart(document.getElementById('c4'),{type:'bar',data:{labels:["Alpha Strike", "Zombie Siege", "Sky Arena", "Mystic Realm", "Empire Wars", "Goal Hero", "Dragon Quest X", "Night Racer", "Chess Master", "Speed Rush", "Puzzle Land", "Tank Legends"],datasets:[{label:"O'rtacha baho (1-5)",data:[3.41, 3.33, 3.28, 3.21, 3.12, 3.08, 2.98, 2.96, 2.93, 2.91, 2.9, 2.88],backgroundColor:'#4f46e5',borderColor:'#4f46e5'}]}});new Chart(document.getElementById('c5'),{type:'bar',data:{labels:["PC", "PlayStation", "Mobile", "Xbox"],datasets:[{label:"Platformalar boyicha o'yinlar",data:[5, 3, 3, 1],backgroundColor:'#4f46e5',borderColor:'#4f46e5'}]}});</script></body></html>
+<!doctype html>
+<html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="15 jadvalli o‘yin bazasi: DataOps, ma’lumot sifati va o‘yinchilar analitikasi."><title>GameScope — O‘yinlar analitikasi</title><link rel="stylesheet" href="style.css"><script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script><script defer src="app.js"></script></head>
+<body><div class="shell"><aside class="sidebar"><a class="brand" href="#overview"><span class="brand-icon">G</span>GameScope<span class="brand-dot">.</span></a><div class="nav-label">ISH MAYDONI</div><nav aria-label="Asosiy menyu"><a href="#overview" class="active">▦ <span>Umumiy ko‘rinish</span></a><a href="#analytics">◷ <span>Analitika</span></a><a href="#players">♙ <span>O‘yinchilar</span></a><a href="#games">▤ <span>O‘yinlar</span></a><a href="#quality">◈ <span>Ma’lumot sifati</span></a><a href="#database">⊞ <span>Baza tuzilishi</span></a><a href="#reports">↓ <span>Hisobotlar</span></a></nav><div class="sidebar-bottom"><div class="project-card"><span class="eyebrow">O‘QUV LOYIHASI · №5</span><h3>Ma’lumotdan<br>natijagacha.</h3><p>15 jadval. Bitta yaxlit pipeline.</p><a href="#database">Loyiha haqida ↗</a></div><div class="team-mark"><span class="avatar">GR</span><div><strong>Game Ratings</strong><small>DataOps & Analytics</small></div><span class="status-dot"></span></div></div></aside>
+<main><header class="topbar"><div><span class="eyebrow">O‘YINLAR EKOTIZIMI</span><h1 id="page-title">Umumiy ko‘rinish</h1></div><label class="search"><span>⌕</span><input id="search" type="search" placeholder="O‘yinchi yoki o‘yin qidirish…" aria-label="O‘yinchi yoki o‘yin qidirish"></label><a class="icon-button" href="#reports" aria-label="Hisobotlarni yuklab olish">↓</a><span class="avatar">GR</span></header>
+<div class="content"><div class="intro"><div><span class="badge"><span class="status-dot"></span> DataOps hisoboti</span><h2>O‘yinlar olami, raqamlarda<span>.</span></h2><p>Foydalanuvchilar, reytinglar va ma’lumot sifatini bir joyda kuzating.</p></div><a class="button" href="downloads/quality.csv" download>↓ Sifat hisoboti</a></div><div class="notice">ⓘ Ushbu dashboard sun’iy yaratilgan o‘quv ma’lumotlariga asoslangan. Natijalar real o‘yin bozori statistikasini ifodalamaydi.</div>
+<section id="overview" class="view"><div class="stats" id="stats"></div><div class="dashboard-grid"><article class="card activity"><div class="card-heading"><div><span class="eyebrow">FAOLLIK DINAMIKASI</span><h3>Oylik matchlar</h3><p>O‘tkazilgan matchlar soni vaqt kesimida</p></div><a class="small-link" href="downloads/matches_monthly.csv" download>CSV ↗</a></div><div class="chart tall"><canvas id="monthly" aria-label="Oylik matchlar grafigi" role="img"></canvas></div><p class="insight" id="month-insight"></p></article><article class="card"><div class="card-heading"><div><span class="eyebrow">FOYDALANUVCHILAR</span><h3>Faollik taqsimoti</h3><p>Tozalangan bazadagi hisoblar</p></div><span class="pill">Live data emas</span></div><div class="donut-wrap"><canvas id="active-chart" role="img" aria-label="Faol va nofaol foydalanuvchilar"></canvas><div class="donut-center"><strong id="active-percent"></strong><small>faol hisoblar</small></div></div><div id="active-legend" class="legend"></div></article><article class="card"><div class="card-heading"><div><span class="eyebrow">DATAOPS NATIJASI</span><h3>Tozalash samarasi</h3><p>Foydalanuvchilar bo‘yicha oldin va keyin</p></div><a href="#quality" class="small-link">Batafsil ↗</a></div><div id="quality-summary"></div></article><article class="card"><div class="card-heading"><div><span class="eyebrow">REYTING JADVALI</span><h3>Eng yaxshi o‘yinchilar</h3><p>Kamida 2 ta reytingga ega foydalanuvchilar</p></div><a href="#players" class="small-link">Barchasi ↗</a></div><div class="table-wrap" id="top-table"></div></article></div></section>
+<section id="analytics" class="view" hidden><div class="section-heading"><h2>Analitika</h2><a href="downloads/analytics.sql" download class="button secondary">SQL so‘rovlar ↓</a></div><div class="insights" id="insights"></div><div class="two-columns" id="analytics-cards"></div><article class="card"><h3>G‘alaba ulushi bo‘yicha yetakchilar</h3><p class="muted">Kamida 15 ta yaroqli ishtirok yozuvi asosida. Tozalashda o‘chirilgan ishtiroklar natijaga ta’sir qilishi mumkin.</p><div class="table-wrap" id="win-table"></div></article></section>
+<section id="players" class="view" hidden><div class="section-heading"><div><h2>O‘yinchilar</h2><p class="muted">Barcha tozalangan hisoblar va ularning o‘rtacha ELO reytingi</p></div><label>Davlat <select id="country-filter"><option value="">Barchasi</option></select></label></div><article class="card"><div id="player-count" class="muted"></div><div class="table-wrap" id="player-table"></div></article></section>
+<section id="games" class="view" hidden><div class="section-heading"><h2>O‘yinlar katalogi</h2><label>Platforma <select id="platform-filter"><option value="">Barchasi</option></select></label></div><div class="game-grid" id="game-grid"></div></section>
+<section id="quality" class="view" hidden><div class="section-heading"><div><h2>Ma’lumot sifati</h2><p class="muted">O‘chirilgan qatorlar va joyida tuzatilgan qiymatlar alohida hisoblanadi.</p></div><a class="button secondary" href="downloads/quality.json" download>JSON yuklab olish ↓</a></div><article class="card"><h3>15 jadval: oldin → keyin</h3><div class="table-wrap" id="quality-table"></div></article><div class="two-columns"><article class="card"><h3>Tozalash amallari</h3><div class="table-wrap" id="rules-table"></div></article><article class="card"><span class="eyebrow">SIFAT SIYOSATI</span><h3>Noma’lum qiymatlar ham ko‘rinadi</h3><p id="unknown-note"></p><p>Yaroqsiz email va reytinglar olib tashlanadi. Davomiylik mediana bilan to‘ldiriladi. Noto‘g‘ri tug‘ilgan yil NULL qilinadi. Takroriy yutuqlar birlashtiriladi, leaderboard o‘rinlari qayta tartiblanadi.</p><p>Bir foydalanuvchi olib tashlansa, unga tegishli bog‘liq yozuvlar ham filtrlanadi. Shu sababli jadvaldagi jami kamayish alohida xato hisoblagichlariga teng bo‘lishi shart emas.</p></article></div></section>
+<section id="database" class="view" hidden><div class="section-heading"><div><h2>Baza tuzilishi</h2><p class="muted">15 jadval · SQLite · bog‘lanishlar va cheklovlar</p></div><a class="button secondary" href="downloads/clean_schema.sql" download>Sxemani yuklab olish ↓</a></div><article class="card"><h3>Ma’lumotlar oqimi</h3><div class="pipeline"><span>01 · Raw baza</span><b>→</b><span>02 · Tozalash</span><b>→</b><span>03 · Clean baza</span><b>→</b><span>04 · SQL tahlil</span><b>→</b><span>05 · Dashboard</span></div><p>Raw baza xatolarni saqlashga mo‘ljallangan. Clean bazada PRIMARY KEY, FOREIGN KEY, UNIQUE va CHECK cheklovlari ishlaydi. SQLite ulanishida bog‘lanish nazorati uchun PRAGMA foreign_keys=ON yoqiladi.</p></article><article class="card"><h3>Jadvallar xaritasi</h3><div class="schema-groups" id="schema-groups"></div><p class="muted">To‘liq ER-diagramma va ustunlar lug‘ati repozitoriydagi README hamda DATA_DICTIONARY.md fayllarida berilgan.</p></article></section>
+<section id="reports" class="view" hidden><div class="section-heading"><h2>Hisobotlar va loyiha</h2></div><div class="report-grid" id="downloads"></div><article class="card"><h3>Loyiha jamoasi</h3><div class="team-grid"><div><span class="avatar">M</span><strong>Mashhurbek</strong><small>Data Engineer / DB</small></div><div><span class="avatar">L</span><strong>Lochinbek</strong><small>DataOps</small></div><div><span class="avatar">O</span><strong>Og‘abek</strong><small>Data Analyst</small></div><div><span class="avatar">A</span><strong>Akrom</strong><small>QA / DevOps</small></div></div></article><article class="card"><h3>Tekshirish va avtomatik nashr</h3><p>Har bir push uchun GitHub Actions testlarni bajaradi va faqat muvaffaqiyatli tekshiruvdan keyin saytni nashr qiladi. Joriy bajarilish natijasi va test artifactlari quyidagi havolada.</p><a class="button secondary" href="https://github.com/malimov707-cpu/Onlayn-o-yin-foydalanuvchilari-va-reytinglari-bazasi/actions" target="_blank" rel="noopener">GitHub Actions ↗</a></article></section>
+<footer><span>GameScope · Mavzu №5 · Sun’iy o‘quv ma’lumotlari</span><span id="generated"></span></footer><div id="error" role="alert" hidden>Ma’lumotlarni yuklab bo‘lmadi. Sahifani HTTP server orqali oching yoki qayta urinib ko‘ring.</div></div></main></div></body></html>

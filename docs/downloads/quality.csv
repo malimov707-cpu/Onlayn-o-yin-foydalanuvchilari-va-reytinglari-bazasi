@@ -1,0 +1,16 @@
+table,before,after,removed
+countries,10,10,0
+users,525,472,53
+user_profiles,500,472,28
+platforms,4,4,0
+genres,6,6,0
+games,12,12,0
+game_genres,24,24,0
+matches,3000,3000,0
+match_players,9131,8278,853
+ratings,1027,933,94
+leaderboards,240,227,13
+achievements,8,8,0
+user_achievements,1500,1177,323
+friends,1230,1078,152
+game_reviews,800,743,57
