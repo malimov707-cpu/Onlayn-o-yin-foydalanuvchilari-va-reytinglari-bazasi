@@ -71,6 +71,10 @@ def clean():
     gr = t["game_reviews"]; bad = ~gr["stars"].between(1, 5)
     rep["reviews_bad_removed"] = int(bad.sum()); t["game_reviews"] = gr[~bad & gr["user_id"].isin(ids)]
 
+    # --- yangi sifat tekshiruvi: level 1..100 oralig'iga sig'masa 100 bilan cheklash
+    p = t["user_profiles"]; bad_lvl = p["level"] > 100
+    rep["level_over_100_capped"] = int(bad_lvl.sum()); p.loc[bad_lvl, "level"] = 100; t["user_profiles"] = p
+
     if os.path.exists(CLEAN): os.remove(CLEAN)
     out = sqlite3.connect(CLEAN)
     for n, df in t.items(): df.to_sql(n, out, index=False)
